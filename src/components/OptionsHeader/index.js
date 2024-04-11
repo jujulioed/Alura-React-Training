@@ -1,3 +1,5 @@
+import './style.css'
+
 const optionTexts = ['CATEGORIAS', 'FAVORITOS', 'MINHA ESTANTE'];
 
 function OptionsHeader() {

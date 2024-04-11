@@ -1,3 +1,5 @@
+import './style.css'
+
 import Profile from '../../images/perfil.svg'
 import Bag from '../../images/sacola.svg';
 

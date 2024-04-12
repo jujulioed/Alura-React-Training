@@ -3,10 +3,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import { books } from "./dataSearch";
 
-
-
 const SearchConatiner = styled.section `
-    background-image: linear-gradient(90deg, #002F52 35%, #326589 165%);
     color: #FFF;
     text-align: center;
     padding: 85px 0;
@@ -27,10 +24,25 @@ const Subtitle = styled.h3`
     margin-bottom: 40px;
 `
 
+const BookSlot = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    p {
+        width: 200px;
+    }
+    img {
+        width: 100px;
+    }
+    &:hover {
+        border: 1px solid white;
+    }
+`
+
 function Search() {
     const [searchedBooks, setSearchedBooks] = useState([]);
-
-    console.log(searchedBooks)
 
     return (
         <SearchConatiner>
@@ -44,7 +56,12 @@ function Search() {
                     setSearchedBooks(searchResult);
                 }}
             />
-
+            {searchedBooks.map( book=> (
+                <BookSlot>
+                    <p>{book.name}</p>
+                    <img src={book.src}/>
+                </BookSlot>
+            ))}
         </SearchConatiner>
     );
 }

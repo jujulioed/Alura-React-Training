@@ -5,4 +5,5 @@ export const books = [
     {name: 'JavaScript Acertivo', id: 2, src:book},
     {name: 'Visões de código', id: 3, src:book},
     {name: 'Java dev - do zero ao avançado', id: 4, src:book},
+    {name: 'Java dev - do avançado ao expert', id: 5, src:book},
 ]

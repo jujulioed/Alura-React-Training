@@ -17,8 +17,8 @@ const icons = [Profile, Bag];
 function IconsHeader() {
     return (
     <Icons>
-        {icons.map( (icon) => (
-            <Icon><img src={icon}></img></Icon>
+        {icons.map( (icon, index) => (
+            <Icon key={index}><img src={icon} alt='desc'></img></Icon>
         ))}
     </Icons>
     )

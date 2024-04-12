@@ -1,6 +1,7 @@
 import Input from "../Input";
 import styled from "styled-components";
 import { useState } from "react";
+import { books } from "./dataSearch";
 
 
 
@@ -27,7 +28,9 @@ const Subtitle = styled.h3`
 `
 
 function Search() {
-    const [wroteText, setWroteText] = useState('');
+    const [searchedBooks, setSearchedBooks] = useState([]);
+
+    console.log(searchedBooks)
 
     return (
         <SearchConatiner>
@@ -35,9 +38,13 @@ function Search() {
             <Subtitle>Encontre seu livro em nossa estante</Subtitle>
             <Input
                 placeholder="Escreva sua próxima leitura"
-                onBlur={(event) => setWroteText(event.target.value)}
+                onBlur={(event) => {
+                    const wroteText = event.target.value;
+                    const searchResult = books.filter( book => book.name.includes(wroteText));
+                    setSearchedBooks(searchResult);
+                }}
             />
-            <p>{wroteText}</p>
+
         </SearchConatiner>
     );
 }
